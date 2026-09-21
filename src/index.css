@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --color-lime: #C6F432;
+  --color-coral: #FF5C39;
+  --color-sky: #4DA6FF;
+  --color-sun: #FFD23F;
+  --color-ink: #111111;
+  --color-paper: #FAFAF7;
+}
+
+html { scroll-behavior: smooth; }
+body { @apply bg-paper text-ink font-sans antialiased; }
+
+.marquee { animation: marquee 40s linear infinite; }
+@keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+
+.fade-in { animation: fadeIn 1s ease both; }
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
